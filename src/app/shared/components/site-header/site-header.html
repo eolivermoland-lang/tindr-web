@@ -1,0 +1,49 @@
+<header class="header" [class.is-condensed]="condensed()" [class.is-open]="menuOpen()">
+  <div class="shell bar">
+    <a class="brand" routerLink="/" (click)="closeMenu()" aria-label="Tindr home">
+      <app-tindr-mark class="brand-mark" />
+      <span class="brand-name">Tindr</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      @for (item of items; track item.path) {
+        <a
+          class="nav-link"
+          [class.is-emphasis]="item.emphasis"
+          [routerLink]="item.path"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          {{ item.label }}
+        </a>
+      }
+    </nav>
+
+    <button
+      type="button"
+      class="menu-toggle"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="mobile-nav"
+      (click)="toggleMenu()"
+    >
+      <span class="menu-toggle-label">{{ menuOpen() ? 'Close' : 'Menu' }}</span>
+    </button>
+  </div>
+
+  <div class="drawer" id="mobile-nav" [attr.hidden]="menuOpen() ? null : true">
+    <nav class="drawer-nav" aria-label="Primary mobile">
+      @for (item of items; track item.path) {
+        <a
+          class="drawer-link"
+          [class.is-emphasis]="item.emphasis"
+          [routerLink]="item.path"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="closeMenu()"
+        >
+          {{ item.label }}
+        </a>
+      }
+    </nav>
+  </div>
+</header>

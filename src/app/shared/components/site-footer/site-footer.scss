@@ -1,0 +1,73 @@
+// SPDX-License-Identifier: Apache-2.0
+
+.footer {
+  border-top: 1px solid var(--color-line);
+  background: var(--color-background-bottom);
+  padding: var(--space-10) 0 var(--space-8);
+}
+
+.footer-grid {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  color: var(--color-text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 2.2rem;
+}
+
+.blurb {
+  margin: 0;
+  max-width: 28rem;
+  color: var(--color-text-muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-6);
+}
+
+.links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: var(--color-text);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-9);
+  color: var(--color-text-muted);
+  font-size: var(--type-caption);
+  letter-spacing: 0.04em;
+}
+
+.meta p {
+  margin: 0;
+}
+
+@media (min-width: 800px) {
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: start;
+  }
+
+  .links {
+    justify-content: flex-end;
+  }
+}

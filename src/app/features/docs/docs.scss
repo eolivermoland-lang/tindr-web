@@ -1,0 +1,27 @@
+// SPDX-License-Identifier: Apache-2.0
+
+.prose p {
+  margin: 0 0 var(--space-6);
+  max-width: 42rem;
+  color: var(--color-text-muted);
+}
+
+.promises {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 44rem;
+}
+
+.promises li {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-line);
+  color: var(--color-text-muted);
+}
+
+.promises span {
+  color: var(--color-accent);
+}

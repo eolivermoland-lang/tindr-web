@@ -1,0 +1,14 @@
+Tindr OS
+========
+
+This file is a placeholder, not a bootable system image.
+
+Real UEFI disk images for x86-64 and AArch64 will be published
+here when they are ready to download.
+
+The official Tindr mark (two notched peaks), designed by
+Oliver Torden in 2026, is included beside this file as
+tindr-logo.png.
+
+Project: https://tindr.konfidensiell.no
+License: Apache-2.0

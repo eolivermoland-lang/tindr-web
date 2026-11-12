@@ -1,0 +1,327 @@
+// SPDX-License-Identifier: Apache-2.0
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--color-text);
+}
+
+.sky {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    var(--color-background-top) 0%,
+    var(--color-background) 48%,
+    var(--color-background-bottom) 100%
+  );
+}
+
+.glow {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 8%;
+  width: 46rem;
+  height: 22rem;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--color-accent) 22%, transparent), transparent 70%);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.ridge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 28vh;
+  min-height: 11rem;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.ridge.far {
+  z-index: 2;
+  height: 34vh;
+  fill: color-mix(in srgb, var(--color-surface-raised) 92%, var(--color-text) 8%);
+}
+
+.ridge.near {
+  z-index: 3;
+  fill: var(--color-background-bottom);
+}
+
+.glacier {
+  stroke: var(--color-accent);
+  stroke-width: 2.4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.85;
+}
+
+.lockup {
+  position: relative;
+  z-index: 4;
+  width: min(var(--shell), calc(100% - 2 * var(--space-6)));
+  margin: calc(var(--header-height) + var(--space-3)) auto var(--space-7);
+  text-align: center;
+}
+
+.peaks {
+  position: relative;
+  width: min(18rem, 58vw);
+  margin: 0 auto var(--space-5);
+  aspect-ratio: 74575 / 33912;
+}
+
+.peak {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  color: var(--color-text);
+  will-change: transform;
+  filter: drop-shadow(0 0 28px color-mix(in srgb, var(--color-text) 18%, transparent));
+}
+
+.wordmark {
+  margin: 0 0 var(--space-4);
+  font-size: clamp(2.1rem, 4.8vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: var(--tracking-display);
+  line-height: 1;
+}
+
+.headline {
+  margin: 0 auto var(--space-5);
+  max-width: 36ch;
+  font-size: clamp(1.55rem, 3vw, 2.75rem);
+  font-weight: 100;
+  letter-spacing: var(--tracking-display);
+  line-height: 1.15;
+}
+
+.lede {
+  margin: 0 auto var(--space-6);
+  max-width: 36rem;
+  color: var(--color-text-muted);
+  font-size: var(--type-title);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.caption {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  right: 0;
+  bottom: var(--space-6);
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--type-caption);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.facts,
+.plain,
+.promises,
+.preview {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.facts {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.facts h3,
+.split h3 {
+  margin: 0 0 var(--space-3);
+  font-size: var(--type-title);
+  font-weight: 700;
+}
+
+.facts p,
+.plain li,
+.design-grid p {
+  margin: 0 0 var(--space-5);
+  color: var(--color-text-muted);
+  max-width: 42rem;
+}
+
+.design-grid,
+.split {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.swatch {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--type-caption);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.swatch i {
+  display: block;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-text) 10%, transparent);
+}
+
+.snow i { background: var(--color-text); }
+.rime i { background: var(--color-text-muted); }
+.ice i { background: var(--color-accent); }
+.moss i { background: var(--color-success); }
+.cloudberry i { background: var(--color-warning); }
+.lingonberry i { background: var(--color-danger); }
+
+.plain li {
+  position: relative;
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+.plain li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.preview {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.preview li {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr auto;
+  gap: var(--space-4);
+  align-items: baseline;
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.preview .code {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.preview .state {
+  color: var(--color-text-muted);
+  font-size: var(--type-caption);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.preview li[data-status='current'] .state {
+  color: var(--color-accent-strong);
+}
+
+.preview li[data-status='done'] .state {
+  color: var(--color-success);
+}
+
+.more {
+  margin: var(--space-7) 0 0;
+}
+
+.promises {
+  display: grid;
+  gap: var(--space-4);
+  counter-reset: none;
+}
+
+.promises li {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-line);
+  color: var(--color-text-muted);
+}
+
+.promises .num {
+  color: var(--color-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.close {
+  padding: var(--space-11) 0;
+  background: var(--color-background-bottom);
+}
+
+.close-inner {
+  max-width: 40rem;
+}
+
+.close h2 {
+  margin: 0 0 var(--space-5);
+  font-size: var(--type-heading);
+  letter-spacing: var(--tracking-display);
+}
+
+.close .lede {
+  margin: 0 0 var(--space-8);
+  text-align: left;
+}
+
+@media (min-width: 800px) {
+  .facts,
+  .design-grid,
+  .split,
+  .promises {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .promises {
+    column-gap: var(--space-9);
+  }
+
+  .facts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow,
+  .ridge,
+  .peak {
+    will-change: auto;
+    transform: none !important;
+  }
+}

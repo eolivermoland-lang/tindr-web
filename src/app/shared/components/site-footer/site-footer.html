@@ -1,0 +1,23 @@
+<footer class="footer">
+  <div class="shell footer-grid">
+    <div class="identity">
+      <a class="brand" routerLink="/" aria-label="Tindr home">
+        <app-tindr-mark class="brand-mark" />
+        <span>Tindr</span>
+      </a>
+      <p class="blurb">
+        An original desktop operating system, written in Rust. Nordic, calm, sharp
+        and still early.
+      </p>
+    </div>
+    <nav class="links" aria-label="Footer">
+      @for (item of items; track item.path) {
+        <a [routerLink]="item.path">{{ item.label }}</a>
+      }
+    </nav>
+  </div>
+  <div class="shell meta">
+    <p>Copyright {{ year }} Oliver Torden. Apache-2.0.</p>
+    <p>tindr.konfidensiell.no</p>
+  </div>
+</footer>

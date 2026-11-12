@@ -1,0 +1,59 @@
+<article class="page">
+  <header class="page-hero shell">
+    <p class="eyebrow">Download</p>
+    <h1>Tindr for x86-64 and AArch64.</h1>
+    <p class="lede">
+      When real bootable images are ready, they will appear here, one for each architecture,
+      with a checksum. What you can download today is a clearly marked placeholder, plus the
+      official mark.
+    </p>
+  </header>
+
+  @if (error(); as message) {
+    <p class="shell error" role="alert">{{ message }}</p>
+  }
+
+  @if (manifest(); as manifest) {
+    <p class="shell banner" role="status">
+      <span class="badge">Placeholder</span>
+      {{ notice(manifest) }}
+    </p>
+
+    <div class="shell cards">
+      @for (release of manifest.releases; track release.id) {
+        <article class="card" [class.is-placeholder]="placeholder(release)">
+          <p class="arch">{{ release.arch }}</p>
+          <h2>{{ release.label }}</h2>
+          <p class="notes">{{ release.notes }}</p>
+          <dl class="meta">
+            <div>
+              <dt>Version</dt>
+              <dd>{{ release.version }}</dd>
+            </div>
+            <div>
+              <dt>Size</dt>
+              <dd>{{ sizeOf(release) }}</dd>
+            </div>
+            <div class="wide">
+              <dt>SHA-256</dt>
+              <dd class="hash">{{ release.sha256 }}</dd>
+            </div>
+          </dl>
+          <a class="btn btn-accent" [href]="release.url" download>
+            Download {{ release.filename }}
+          </a>
+        </article>
+      }
+    </div>
+
+    <aside class="shell extras">
+      <h2>Also in the folder</h2>
+      <p>
+        The official Tindr mark, designed by Oliver Torden in 2026, ships beside the
+        placeholder as a PNG.
+      </p>
+      <p class="updated">Manifest updated {{ manifest.updated | date: 'd MMMM y' }}.</p>
+      <a class="text-link" href="/downloads/tindr-logo.png" download>Download tindr-logo.png</a>
+    </aside>
+  }
+</article>

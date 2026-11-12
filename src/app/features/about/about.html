@@ -1,0 +1,74 @@
+<article class="page">
+  <header class="page-hero shell">
+    <p class="eyebrow">About</p>
+    <h1>An original operating system, drawn from the Norwegian landscape.</h1>
+    <p class="lede">
+      Tindr is a desktop system for x86-64 and AArch64, written in Rust from an empty
+      directory. It aims to be better than the systems we already have on a short list of
+      measurable promises, not by looking like them.
+    </p>
+  </header>
+
+  <app-site-section eyebrow="Principles" title="A few rules that do not move.">
+    <ul class="principles">
+      <li>
+        <h3>Capabilities, not root.</h3>
+        <p>A task should only touch what it holds a handle to. That Ledger is planned for a later milestone. The idea already shapes the design.</p>
+      </li>
+      <li>
+        <h3>A small kernel. Everything else restartable.</h3>
+        <p>Drivers and services will live in user space and be supervised by Hearth. A crash should restart a component, never the machine.</p>
+      </li>
+      <li>
+        <h3>Discover, never assume.</h3>
+        <p>Hardware is found through ACPI and the device tree. The kernel does not hard-code machine addresses from a particular emulator.</p>
+      </li>
+      <li>
+        <h3>Proof over claims.</h3>
+        <p>A feature is not done until an automated test proves it in QEMU on both architectures. Golden screenshots are compared with zero tolerance.</p>
+      </li>
+      <li>
+        <h3>Norwegian from day one.</h3>
+        <p>UTF-8 everywhere. The letters &aelig;, &oslash; and &aring; work in the font, in the keyboard plan, in file names and in sorting.</p>
+      </li>
+      <li>
+        <h3>Own expression.</h3>
+        <p>Nordic, calm, sharp and fast. Design tokens live in one file. Light and dark mode are part of the system plan. No imitation of other desktops.</p>
+      </li>
+    </ul>
+  </app-site-section>
+
+  <app-site-section tone="raised" eyebrow="Layers" title="How the system is meant to stack.">
+    <p class="intro">
+      Some of these layers already exist. The later ones are planned, and are named here so
+      the shape of the system is visible now.
+    </p>
+    <ol class="layers">
+      <li><strong>tindr-boot.</strong> A UEFI loader. Built.</li>
+      <li><strong>Hybrid kernel.</strong> Hardware layer, virtual memory, interrupts and time are in place. Tasks, Weaves, Gates and the Ledger are planned, with Weaves underway in M3.</li>
+      <li><strong>User-space drivers.</strong> Planned.</li>
+      <li><strong>Hearth and Registry.</strong> Planned.</li>
+      <li><strong>Unix layer.</strong> VFS, TindrFS, processes, TTY and sockets. Planned.</li>
+      <li><strong>Runtime.</strong> Our own libc and Rust runtime. Planned.</li>
+      <li><strong>Graphics.</strong> A vector library and a text engine already draw the boot and panic screens in the kernel. A compositor is planned.</li>
+      <li><strong>Desktop and apps.</strong> Planned.</li>
+    </ol>
+  </app-site-section>
+
+  <app-site-section eyebrow="Architectures" title="Two first-class machines.">
+    <p>
+      Tindr boots through UEFI on x86-64 and on AArch64. The first target is QEMU, then a
+      virtual machine on Apple silicon, then a physical PC. The same tests run on both
+      architectures. One is not a port of the other.
+    </p>
+    <p>
+      The project is licensed under Apache-2.0. Fjord Sans and the official mark were
+      designed by Oliver Torden in 2026 and ship with the system.
+    </p>
+    <p>
+      <a class="text-link" routerLink="/docs">Read a longer account</a>
+      or
+      <a class="text-link" routerLink="/roadmap">see the roadmap</a>.
+    </p>
+  </app-site-section>
+</article>

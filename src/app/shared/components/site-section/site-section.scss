@@ -1,0 +1,51 @@
+// SPDX-License-Identifier: Apache-2.0
+
+.section {
+  position: relative;
+  padding: var(--space-10) 0;
+  scroll-margin-top: calc(var(--header-height) + var(--space-4));
+}
+
+.tone-raised {
+  background: var(--color-surface);
+}
+
+.tone-deep {
+  background: var(--color-background-bottom);
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-4);
+  color: var(--color-accent);
+  font-size: var(--type-caption);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0 0 var(--space-5);
+  max-width: 18ch;
+  font-size: var(--type-heading);
+  font-weight: 700;
+  letter-spacing: var(--tracking-display);
+  line-height: 1.15;
+}
+
+.lede {
+  margin: 0 0 var(--space-8);
+  max-width: 42rem;
+  color: var(--color-text-muted);
+  font-size: var(--type-title);
+  line-height: var(--line-height);
+}
+
+.body {
+  min-width: 0;
+}
+
+@media (min-width: 800px) {
+  .section {
+    padding: var(--space-10) 0;
+  }
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Tindr">
+  <rect width="32" height="32" rx="7" fill="#0B1216"/>
+  <g fill="#E8EEF1" transform="translate(4.2, 10.2) scale(0.00031645993965806235)">
+    <polygon points="31204,0 44143,14078 39870,19162 33895,13011 20479,33912 0,33912"/>
+    <polygon points="51047,7319 74575,33912 70957,33912 53780,20921 46694,33912 28561,33912"/>
+  </g>
+</svg>

@@ -1,0 +1,36 @@
+// SPDX-License-Identifier: Apache-2.0
+
+:host {
+  display: flex;
+  min-height: 100dvh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  padding-top: var(--header-height);
+}
+
+main.is-home {
+  padding-top: 0;
+}
+
+main:focus {
+  outline: none;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-5);
+  top: calc(-1 * var(--header-height));
+  z-index: 60;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-medium);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}

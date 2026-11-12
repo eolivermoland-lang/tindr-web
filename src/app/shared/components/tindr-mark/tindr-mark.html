@@ -1,0 +1,14 @@
+<svg
+  class="mark"
+  [attr.viewBox]="viewBox"
+  role="img"
+  [attr.aria-label]="label()"
+  focusable="false"
+>
+  @if (showLeft()) {
+    <polygon class="peak peak-left" [attr.points]="leftPoints" />
+  }
+  @if (showRight()) {
+    <polygon class="peak peak-right" [attr.points]="rightPoints" />
+  }
+</svg>

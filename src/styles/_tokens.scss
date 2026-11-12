@@ -1,0 +1,66 @@
+// SPDX-License-Identifier: Apache-2.0
+// Mirrors design/tokens.toml from Tindr OS. Change names here only with that file.
+
+:root {
+  color-scheme: dark;
+
+  --color-background: #0b1216;
+  --color-background-top: #10202a;
+  --color-background-bottom: #070c0f;
+  --color-surface: #121b20;
+  --color-surface-raised: #19252c;
+  --color-line: #26353d;
+  --color-text: #e8eef1;
+  --color-text-muted: #93a5ae;
+  --color-accent: #74c7dd;
+  --color-accent-strong: #a9e0ee;
+  --color-on-accent: #062029;
+  --color-success: #7fc79e;
+  --color-warning: #f2b45e;
+  --color-danger: #ef6f76;
+
+  --font-sans: 'Fjord Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --type-caption: 0.75rem;
+  --type-body: 1.0125rem;
+  --type-title: 1.25rem;
+  --type-heading: 1.85rem;
+  --type-display: 2.75rem;
+  --type-hero: 4rem;
+
+  --tracking-body: 0.01em;
+  --tracking-display: -0.012em;
+  --line-height: 1.45;
+
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 8px;
+  --space-4: 12px;
+  --space-5: 16px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 48px;
+  --space-9: 64px;
+  --space-10: 96px;
+  --space-11: 128px;
+
+  --radius-small: 4px;
+  --radius-medium: 8px;
+  --radius-large: 14px;
+  --radius-round: 999px;
+
+  --motion-fast: 120ms;
+  --motion-normal: 200ms;
+  --motion-slow: 320ms;
+
+  --shell: 70rem;
+  --header-height: 4.5rem;
+}
+
+@media (min-width: 800px) {
+  :root {
+    --type-heading: 2.15rem;
+    --type-display: 3.25rem;
+  }
+}

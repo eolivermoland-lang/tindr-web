@@ -1,0 +1,198 @@
+<article class="home">
+  <section class="hero" aria-label="Introduction">
+    <div class="sky"></div>
+    <div class="glow" [tindrParallax]="0.08" aria-hidden="true"></div>
+
+    <svg
+      class="ridge far"
+      [tindrParallax]="0.16"
+      viewBox="0 0 1000 1000"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <polygon
+        points="0,800 110,760 230,785 360,730 470,770 600,715 740,765 870,735 1000,775 1000,1000 0,1000"
+      />
+    </svg>
+    <svg
+      class="ridge near"
+      [tindrParallax]="0.34"
+      viewBox="0 0 1000 1000"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <polygon
+        points="0,875 140,850 260,868 400,820 520,845 640,772 720,830 830,812 930,846 1000,835 1000,1000 0,1000"
+      />
+      <polyline
+        class="glacier"
+        points="0,875 140,850 260,868 400,820 520,845 640,772 720,830 830,812 930,846 1000,835"
+        fill="none"
+      />
+    </svg>
+
+    <div class="lockup">
+      <div class="peaks" aria-hidden="true">
+        <app-tindr-mark class="peak peak-left" layer="left" [tindrParallax]="0.14" label="" />
+        <app-tindr-mark class="peak peak-right" layer="right" [tindrParallax]="0.24" label="" />
+      </div>
+      <p class="wordmark">Tindr</p>
+      <h1 class="headline">
+        A desktop operating system,<br />
+        written in Rust.
+      </h1>
+      <p class="lede">
+        For x86-64 and AArch64. Built from an empty directory, tested in QEMU on both
+        architectures. Now at milestone {{ current?.code }} of {{ total }}.
+      </p>
+      <div class="actions">
+        <a class="btn btn-accent" routerLink="/download">Download</a>
+        <a class="btn btn-ghost" routerLink="/about">Read about Tindr</a>
+      </div>
+    </div>
+
+    <p class="caption">Tindr 0.1-dev – x86-64 and AArch64</p>
+  </section>
+
+  <app-site-section
+    sectionId="kernel"
+    eyebrow="The kernel"
+    title="Small, honest, and already on its own feet."
+    lede="Tindr is not a skin on Linux, and it does not borrow another system's identity. The early kernel is original Rust, booted from UEFI, and proven by tests that run in QEMU on both architectures."
+  >
+    <ul class="facts">
+      <li>
+        <h3>UEFI loader</h3>
+        <p>
+          tindr-boot loads the kernel as an ELF file, exits boot services, and hands over the
+          memory map, the framebuffer, and ACPI or a device tree. Hardware is discovered, never
+          assumed from a fixed address.
+        </p>
+      </li>
+      <li>
+        <h3>Memory the kernel owns</h3>
+        <p>
+          A physical frame allocator, a kernel heap, and our own page tables. Executable pages
+          are not writable. Writable pages are not executable. That write xor execute rule is
+          already in force.
+        </p>
+      </li>
+      <li>
+        <h3>Interrupts and time</h3>
+        <p>
+          Exception vectors on both architectures, a local APIC calibrated against HPET, a
+          Generic Interrupt Controller on AArch64, and a 1 kHz tick with a monotonic clock.
+        </p>
+      </li>
+    </ul>
+  </app-site-section>
+
+  <app-site-section
+    sectionId="design"
+    tone="raised"
+    eyebrow="Design"
+    title="Nordic, calm, sharp and fast."
+    lede="The look comes from one file of design tokens: polar night, fjord water, snow, grey rock, and glacier ice. If a colour pair is too weak to read, the build refuses it."
+  >
+    <div class="design-grid">
+      <div>
+        <p>
+          The official mark is two notched peaks, drawn as vectors so it stays sharp at any
+          size. The typeface is Fjord Sans, designed by Oliver Torden in 2026, in Thin,
+          Regular and Bold. Norwegian letters work from day one: &aelig;, &oslash; and &aring;
+          are first-class in the font, in file names, and in sorting.
+        </p>
+        <p>
+          The boot screen is a quiet sky, a far ridge, a near ridge with a line of glacier
+          light, and the mark centred above them. That is the same landscape this site is
+          built from.
+        </p>
+      </div>
+      <figure class="swatches" aria-label="Palette">
+        <span class="swatch snow"><i></i>Snow</span>
+        <span class="swatch rime"><i></i>Rime</span>
+        <span class="swatch ice"><i></i>Ice</span>
+        <span class="swatch moss"><i></i>Moss</span>
+        <span class="swatch cloudberry"><i></i>Cloudberry</span>
+        <span class="swatch lingonberry"><i></i>Lingonberry</span>
+      </figure>
+    </div>
+  </app-site-section>
+
+  <app-site-section
+    sectionId="security"
+    eyebrow="Security"
+    title="Trust has to be proven, not claimed."
+    lede="A few guarantees already hold in the running kernel. The rest are promises the later milestones are being built to keep, and they are labelled that way."
+  >
+    <div class="split">
+      <div>
+        <h3>Already in the kernel</h3>
+        <ul class="plain">
+          <li>Write xor execute on every page the kernel maps.</li>
+          <li>A fault is never silent. Unexpected exceptions show on the screen and over serial, with the real registers.</li>
+          <li>Memory maps and firmware tables come from the machine, not from baked-in addresses.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Planned</h3>
+        <ul class="plain">
+          <li>Capabilities instead of root: a task can only touch what it holds a handle to.</li>
+          <li>Drivers and services in user space, restarted by Hearth if they crash.</li>
+          <li>Sandboxing, no telemetry, no ads, no forced accounts, and updates that roll back on failure.</li>
+        </ul>
+      </div>
+    </div>
+  </app-site-section>
+
+  <app-site-section
+    sectionId="roadmap"
+    tone="raised"
+    eyebrow="Roadmap"
+    title="Twenty-three milestones, from an empty directory to 1.0."
+    lede="{{ doneCount }} are done. {{ current?.code }} {{ current?.title }} is underway. Everything after that is planned."
+  >
+    <ol class="preview">
+      @for (item of preview; track item.id) {
+        <li [attr.data-status]="item.status">
+          <span class="code">{{ item.code }}</span>
+          <span class="name">{{ item.title }}</span>
+          <span class="state">{{ item.status }}</span>
+        </li>
+      }
+    </ol>
+    <p class="more">
+      <a class="text-link" routerLink="/roadmap">See the full roadmap</a>
+    </p>
+  </app-site-section>
+
+  <app-site-section
+    sectionId="promises"
+    eyebrow="The ten promises"
+    title="What Tindr is being built to keep."
+    lede="These are aims, not results. Each one will have a benchmark before 1.0. They are listed here so the destination is visible while the system is still early."
+  >
+    <ol class="promises">
+      @for (line of promises; track line; let i = $index) {
+        <li>
+          <span class="num">{{ i + 1 }}</span>
+          <span>{{ line }}</span>
+        </li>
+      }
+    </ol>
+  </app-site-section>
+
+  <section class="close" id="download">
+    <div class="shell close-inner">
+      <p class="eyebrow">Download</p>
+      <h2>Images for x86-64 and AArch64.</h2>
+      <p class="lede">
+        The files here today are placeholders, clearly marked, with the official mark beside
+        them. Real bootable images will take their place when they are ready.
+      </p>
+      <a class="btn btn-accent" routerLink="/download">Go to the download page</a>
+    </div>
+  </section>
+</article>

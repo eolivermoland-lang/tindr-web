@@ -1,0 +1,42 @@
+{
+  "origin": "https://tindr.konfidensiell.no",
+  "ogImage": "/brand/og-image.png",
+  "siteName": "Tindr",
+  "pages": [
+    {
+      "path": "/",
+      "title": "Tindr",
+      "description": "Tindr is an original desktop operating system for x86-64 and AArch64, written in Rust from an empty directory. Calm, sharp, and still early.",
+      "changeFrequency": "weekly",
+      "priority": 1.0
+    },
+    {
+      "path": "/about",
+      "title": "About",
+      "description": "How Tindr is built: a small Rust kernel, a UEFI loader, capabilities instead of root, and a design system drawn from the Norwegian landscape.",
+      "changeFrequency": "monthly",
+      "priority": 0.8
+    },
+    {
+      "path": "/roadmap",
+      "title": "Roadmap",
+      "description": "Tindr is built in 23 milestones, from the foundation through a 1.0 desktop. M0 to M2 are done. M3 is underway.",
+      "changeFrequency": "weekly",
+      "priority": 0.8
+    },
+    {
+      "path": "/docs",
+      "title": "Read",
+      "description": "What Tindr is, the principles it is built on, the ten promises, and how it is tested on both architectures.",
+      "changeFrequency": "monthly",
+      "priority": 0.7
+    },
+    {
+      "path": "/download",
+      "title": "Download",
+      "description": "Download Tindr for x86-64 and AArch64. Images today are placeholders. Real bootable images will follow.",
+      "changeFrequency": "weekly",
+      "priority": 0.9
+    }
+  ]
+}

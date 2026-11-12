@@ -1,0 +1,120 @@
+// SPDX-License-Identifier: Apache-2.0
+
+.banner,
+.error {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin: 0 auto var(--space-6);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-large);
+  max-width: var(--shell);
+}
+
+.banner {
+  background: color-mix(in srgb, var(--color-warning) 12%, var(--color-surface));
+  color: var(--color-text);
+}
+
+.error {
+  background: color-mix(in srgb, var(--color-danger) 12%, var(--color-surface));
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-round);
+  background: var(--color-warning);
+  color: var(--color-on-accent);
+  font-size: var(--type-caption);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cards {
+  display: grid;
+  gap: var(--space-6);
+  margin-bottom: var(--space-10);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-large);
+  background: var(--color-surface);
+}
+
+.arch {
+  margin: 0 0 var(--space-3);
+  color: var(--color-accent);
+  font-size: var(--type-caption);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.card h2,
+.extras h2 {
+  margin: 0 0 var(--space-4);
+  font-size: var(--type-title);
+}
+
+.notes,
+.extras p {
+  margin: 0 0 var(--space-5);
+  color: var(--color-text-muted);
+}
+
+.meta {
+  display: grid;
+  gap: var(--space-3) var(--space-6);
+  margin: 0 0 var(--space-6);
+}
+
+.meta dt {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--type-caption);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.meta dd {
+  margin: var(--space-2) 0 0;
+}
+
+.hash {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  color: var(--color-text-muted);
+}
+
+.card .btn {
+  margin-top: auto;
+}
+
+.extras {
+  margin-bottom: var(--space-11);
+}
+
+.updated {
+  font-size: var(--type-caption);
+}
+
+@media (min-width: 800px) {
+  .cards,
+  .meta {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .wide {
+    grid-column: 1 / -1;
+  }
+}

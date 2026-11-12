@@ -1,0 +1,16 @@
+<section class="section" [attr.id]="sectionId()" [class]="'section tone-' + tone()">
+  <div class="shell">
+    @if (eyebrow()) {
+      <p class="eyebrow">{{ eyebrow() }}</p>
+    }
+    @if (title()) {
+      <h2 class="title">{{ title() }}</h2>
+    }
+    @if (lede()) {
+      <p class="lede">{{ lede() }}</p>
+    }
+    <div class="body">
+      <ng-content />
+    </div>
+  </div>
+</section>

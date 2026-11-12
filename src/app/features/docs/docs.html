@@ -1,0 +1,75 @@
+<article class="page">
+  <header class="page-hero shell">
+    <p class="eyebrow">Read</p>
+    <h1>What Tindr is, in slightly more detail.</h1>
+    <p class="lede">
+      This is a short public account of the project, not the full engineering log. It stays
+      with what is already true, and it marks planned work as planned.
+    </p>
+  </header>
+
+  <app-site-section eyebrow="A short history" title="Written from an empty directory.">
+    <div class="prose">
+      <p>
+        Tindr started as a blank repository. There is no Linux kernel under it, and no borrowed
+        desktop. The first milestone built the toolchain, the documentation skeleton, and a
+        test runner that boots QEMU headless on x86-64 and AArch64 and reads a pass or fail
+        line from the serial port.
+      </p>
+      <p>
+        The second milestone put a picture on the screen: a UEFI loader, a kernel written in
+        Rust, a serial log, a boot screen, and a panic screen. The official mark and Fjord Sans
+        are drawn by Tindr's own rasteriser, not by a guest library inside the kernel.
+      </p>
+      <p>
+        Milestone 2, now tagged, gave the kernel its own memory and its own interrupts:
+        a frame allocator, a heap, page tables with write xor execute, exception vectors, and a
+        timer. Milestone 3, now underway, moves the kernel into the higher half and introduces
+        Weaves and syscalls.
+      </p>
+    </div>
+  </app-site-section>
+
+  <app-site-section tone="raised" eyebrow="How it is tested" title="Both architectures, every time.">
+    <div class="prose">
+      <p>
+        "Done" means an automated test proved it in QEMU on x86-64 and on AArch64. Screen tests
+        compare a dump of the framebuffer with a golden PNG, with zero tolerance. Host unit
+        tests and fuzzing cover parsers and allocators before they ever boot.
+      </p>
+      <p>
+        The usual commands in the operating system repository are just check, just test, just
+        ci, just run, just bench and just image. This website is a separate project and does
+        not build the kernel.
+      </p>
+    </div>
+  </app-site-section>
+
+  <app-site-section eyebrow="The ten promises" title="Aims for 1.0, each with a future benchmark.">
+    <ol class="promises">
+      @for (line of promises; track line; let i = $index) {
+        <li><span>{{ i + 1 }}.</span> {{ line }}</li>
+      }
+    </ol>
+  </app-site-section>
+
+  <app-site-section tone="raised" eyebrow="Licence and typography" title="Apache-2.0, and a typeface of our own.">
+    <div class="prose">
+      <p>
+        Tindr is licensed under Apache-2.0. Every source file carries an SPDX header. The
+        official mark and Fjord Sans are designed by Oliver Torden and licensed with the
+        project. Tindr Sans is the system's fallback face when a glyph is missing.
+      </p>
+      <p>
+        This site self-hosts Fjord Sans and uses a system sans as a fallback for the few
+        characters the typeface does not yet contain.
+      </p>
+      <p>
+        <a class="text-link" routerLink="/about">About the architecture</a>,
+        <a class="text-link" routerLink="/roadmap">the roadmap</a>,
+        or
+        <a class="text-link" routerLink="/download">the download page</a>.
+      </p>
+    </div>
+  </app-site-section>
+</article>

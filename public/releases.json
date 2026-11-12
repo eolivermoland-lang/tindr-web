@@ -1,0 +1,31 @@
+{
+  "version": "0.1-dev",
+  "updated": "2026-11-12",
+  "notice": "These downloads are placeholders. Real bootable UEFI images for x86-64 and AArch64 will be published later.",
+  "releases": [
+    {
+      "id": "x86-64-placeholder",
+      "arch": "x86-64",
+      "label": "Tindr for x86-64",
+      "version": "placeholder",
+      "kind": "placeholder",
+      "filename": "tindr-os-placeholder.txt",
+      "url": "/downloads/tindr-os-placeholder.txt",
+      "sha256": "ca74dae91f8a29582ed2ba661a1f20d03c191e52df58b97b80603d6d009f8e6a",
+      "sizeBytes": 368,
+      "notes": "Placeholder. A real UEFI disk image for x86-64 will appear here later."
+    },
+    {
+      "id": "aarch64-placeholder",
+      "arch": "AArch64",
+      "label": "Tindr for AArch64",
+      "version": "placeholder",
+      "kind": "placeholder",
+      "filename": "tindr-os-placeholder.txt",
+      "url": "/downloads/tindr-os-placeholder.txt",
+      "sha256": "ca74dae91f8a29582ed2ba661a1f20d03c191e52df58b97b80603d6d009f8e6a",
+      "sizeBytes": 368,
+      "notes": "Placeholder. A real UEFI disk image for AArch64 will appear here later."
+    }
+  ]
+}

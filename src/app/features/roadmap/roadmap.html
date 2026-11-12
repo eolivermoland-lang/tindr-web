@@ -1,0 +1,32 @@
+<article class="page">
+  <header class="page-hero shell">
+    <p class="eyebrow">Roadmap</p>
+    <h1>From an empty directory to Tindr 1.0.</h1>
+    <p class="lede">
+      Twenty-three milestones. {{ done }} are tagged and done. {{ current?.code }} is in
+      progress. The rest is planned work, not a promise of a date.
+    </p>
+  </header>
+
+  <ol class="timeline shell">
+    @for (item of milestones; track item.id) {
+      <li class="step" [attr.data-status]="item.status">
+        <div class="rail" aria-hidden="true"></div>
+        <div class="card">
+          <div class="meta">
+            <span class="code">{{ item.code }}</span>
+            <span class="state">{{ item.status }}</span>
+          </div>
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.summary }}</p>
+        </div>
+      </li>
+    }
+  </ol>
+
+  <p class="shell footnote">
+    Want the pictures instead?
+    <a class="text-link" routerLink="/download">The download page</a>
+    holds placeholders until real images ship.
+  </p>
+</article>

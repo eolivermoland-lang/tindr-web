@@ -1,0 +1,17 @@
+// SPDX-License-Identifier: Apache-2.0
+
+:host {
+  display: inline-block;
+  line-height: 0;
+}
+
+.mark {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.peak {
+  fill: currentColor;
+}
